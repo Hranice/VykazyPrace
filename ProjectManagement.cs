@@ -144,7 +144,7 @@ namespace VykazyPrace
                 Date = DateTime.Today.ToString("dd/MM/yyyy"),
 
             };
-            Form1.dbint.SaveLog(log);
+            //Form1.dbint.SaveLog(log);
         }
 
         void LogCreateZakazky(Zakazky projekt)
@@ -157,7 +157,7 @@ namespace VykazyPrace
                 Date = DateTime.Today.ToString("dd/MM/yyyy"),
 
             };
-            Form1.dbint.SaveLog(log);
+            //Form1.dbint.SaveLog(log);
         }
 
         void LogRemoveProject(Projekty projekt)
@@ -169,7 +169,7 @@ namespace VykazyPrace
                 UserId = Form1.dbint.CurrentUserInfo.Id.ToString(),
                 Date = DateTime.Today.ToString("dd/MM/yyyy"),
             };
-            Form1.dbint.SaveLog(log);
+            //Form1.dbint.SaveLog(log);
 
         }
 
@@ -182,7 +182,7 @@ namespace VykazyPrace
                 UserId = Form1.dbint.CurrentUserInfo.Id.ToString(),
                 Date = DateTime.Today.ToString("dd/MM/yyyy"),
             };
-            Form1.dbint.SaveLog(log);
+            //Form1.dbint.SaveLog(log);
 
         }
 

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Windows.Forms;
+using VykazyPrace.AppLogging;
 using VykazyPrace.Models;
 
 namespace VykazyPrace
@@ -9,7 +10,6 @@ namespace VykazyPrace
     {
         public static int _year, _month;
         public static DBInteractor dbint = new();
-        string WinUserName = Environment.UserName;
 
         
 
@@ -45,83 +45,83 @@ namespace VykazyPrace
         {
 
 
-            List<Log> Logs = new();
-            Logs = Form1.dbint.GetLogs();
-            if (Logs.Count == 0)
-            {
-                return;
-            }
-            int i = 0;
-            foreach (Log log in Logs)
-            {
+            //List<Log> Logs = new();
+            //Logs = Form1.dbint.GetLogs();
+            //if (Logs.Count == 0)
+            //{
+            //    return;
+            //}
+            //int i = 0;
+            //foreach (Log log in Logs)
+            //{
 
-                if (i == 9)
-                {
-                    break;
-                }
-                else
-                {
-                    UserInfo user = Form1.dbint.GetAllUsersAuto().FirstOrDefault(b => b.Id.ToString() == log.UserId);
-                    Projekty projekt = Form1.dbint.GetProjectByProjectID(log.ActionId);
-                    Zakazky zak = new();
-                    string message = "";
+            //    if (i == 9)
+            //    {
+            //        break;
+            //    }
+            //    else
+            //    {
+            //        UserInfo user = Form1.dbint.GetAllUsersAuto().FirstOrDefault(b => b.Id.ToString() == log.UserId);
+            //        Projekty projekt = Form1.dbint.GetProjectByProjectID(log.ActionId);
+            //        Zakazky zak = new();
+            //        string message = "";
 
-                    if (projekt is null)
-                    {
-                        zak = Form1.dbint.GetZakazkaById(log.ActionId);
-                        if (Form1.dbint.GetRecordsByZakazka(zak).FirstOrDefault().Zakazka == 1)
-                        {
-                            zak = Form1.dbint.GetZakazkaById(log.ActionId);
-                            if (zak is null)
-                            {
-                                //archive
-                                ZakazkyArchive projectArchive = new ZakazkyArchive();
-                                projectArchive = Form1.dbint.GetZakazkyArchiveById(log.ActionId);
-                                message = $"Uživatel {user.Jmeno} {user.Prijmeni} provedl èinnost {log.Action} s objektem {zak.CisloZakazky} - {zak.Nazev}";
-
-
-                            }
-                            else
-                            {
-                                message = $"Uživatel {user.Jmeno} {user.Prijmeni} provedl èinnost {log.Action} s objektem {zak.CisloZakazky} - {zak.Nazev}";
-
-                            }
+            //        if (projekt is null)
+            //        {
+            //            zak = Form1.dbint.GetZakazkaById(log.ActionId);
+            //            if (Form1.dbint.GetRecordsByZakazka(zak).FirstOrDefault().Zakazka == 1)
+            //            {
+            //                zak = Form1.dbint.GetZakazkaById(log.ActionId);
+            //                if (zak is null)
+            //                {
+            //                    //archive
+            //                    ZakazkyArchive projectArchive = new ZakazkyArchive();
+            //                    projectArchive = Form1.dbint.GetZakazkyArchiveById(log.ActionId);
+            //                    message = $"Uživatel {user.Jmeno} {user.Prijmeni} provedl èinnost {log.Action} s objektem {zak.CisloZakazky} - {zak.Nazev}";
 
 
+            //                }
+            //                else
+            //                {
+            //                    message = $"Uživatel {user.Jmeno} {user.Prijmeni} provedl èinnost {log.Action} s objektem {zak.CisloZakazky} - {zak.Nazev}";
 
-
-                        }
-                        else
-                        {
-                            if (projekt != null)
-                            {
-                                message = $"Uživatel {user.Jmeno} {user.Prijmeni} provedl èinnost {log.Action} s objektem {projekt.OznaceniProjektu} - {projekt.NazevProjektu}";
-
-                            }
-                            else
-                            {
-                                //Nastavit aby to sáhlo do archivu když není v aktivních
-                                ProjectArchive projectArchive = new ProjectArchive();
-                                projectArchive = Form1.dbint.GetProjectByProjectIDArchive(log.ActionId);
-                                message = $"Uživatel {user.Jmeno} {user.Prijmeni} provedl èinnost {log.Action} s objektem {projectArchive.Oznaceni} - {projectArchive.Nazev}";
-
-                            }
-                        }
-                    }
-                    else
-                    {
-
-                    }
+            //                }
 
 
 
-                    listBoxLog.Items.Add(message);
-                    i++;
-                }
-            }
-            listBoxLog.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            listBoxLog.MeasureItem += lst_MeasureItem;
-            listBoxLog.DrawItem += lst_DrawItem;
+
+            //            }
+            //            else
+            //            {
+            //                if (projekt != null)
+            //                {
+            //                    message = $"Uživatel {user.Jmeno} {user.Prijmeni} provedl èinnost {log.Action} s objektem {projekt.OznaceniProjektu} - {projekt.NazevProjektu}";
+
+            //                }
+            //                else
+            //                {
+            //                    //Nastavit aby to sáhlo do archivu když není v aktivních
+            //                    ProjectArchive projectArchive = new ProjectArchive();
+            //                    projectArchive = Form1.dbint.GetProjectByProjectIDArchive(log.ActionId);
+            //                    message = $"Uživatel {user.Jmeno} {user.Prijmeni} provedl èinnost {log.Action} s objektem {projectArchive.Oznaceni} - {projectArchive.Nazev}";
+
+            //                }
+            //            }
+            //        }
+            //        else
+            //        {
+
+            //        }
+
+
+
+            //        listBoxLog.Items.Add(message);
+            //        i++;
+            //    }
+            //}
+            //listBoxLog.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            //listBoxLog.MeasureItem += lst_MeasureItem;
+            //listBoxLog.DrawItem += lst_DrawItem;
         }
 
 
@@ -148,17 +148,19 @@ namespace VykazyPrace
         /// </summary>
         void GetUserFromDatabase()
         {
+            AppLogger.Error("An error has occurred when trying to load user from database.", new Exception("test"));
+
             User? currentUser = new();
             UserInfo? currentUserInfo = new();
+
             try
             {
-
-                currentUserInfo = dbint.GetCurrentUserInfo(currentUserInfo, WinUserName);
+                currentUserInfo = dbint.GetCurrentUserInfo(Environment.UserName);
                 currentUser = dbint.GetCurrentUser(currentUser, currentUserInfo.OsCis);
             }
-            catch (NullReferenceException ex)
+            catch (Exception ex)
             {
-                Application.Exit();
+                AppLogger.Error("An error has occurred when trying to load user from database.", ex);
             }
 
             if (ValidateUser(currentUser, currentUserInfo))

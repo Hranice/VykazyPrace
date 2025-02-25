@@ -16,46 +16,24 @@ namespace VykazyPrace
     /// </summary>
     public class DBInteractor
     {
-        /// <summary>
-        /// Aktuální uživatel.
-        /// </summary>
         public User CurrentUser { get; set; } = new();
-
-        /// <summary>
-        /// Informace o aktuálním uživateli.
-        /// </summary>
         public UserInfo CurrentUserInfo { get; set; } = new();
-
-        /// <summary>
-        /// Kontext databáze Vykazy.
-        /// </summary>
         public VykazyContext db { get; set; } = new();
 
-        /// <summary>
-        /// Získá uživatele a informace o uživateli z databáze na základě WinUserName.
-        /// </summary>
-        /// <param name="currentUserInfo">Objekt obsahující informace o uživateli.</param>
-        /// <param name="currentUser">Objekt uživatele.</param>
-        /// <param name="WinUserName">Windows uživatelské jméno uživatele.</param>
-        public void GetUserFromDatabase(UserInfo currentUserInfo, User currentUser, string WinUserName)
-        {
-            using (var db = new VykazyContext())
-            {
-                currentUserInfo = db.UserInfos.FirstOrDefault(u => u.WinUsername == WinUserName);
-                currentUser = db.Users.FirstOrDefault(user => user.OsCis == currentUserInfo.OsCis);
-            }
-        }
 
         /// <summary>
         /// Získá informace o aktuálním uživateli na základě WinUserName.
         /// </summary>
-        /// <param name="currentUserInfo">Objekt obsahující informace o uživateli.</param>
         /// <param name="WinUserName">Windows uživatelské jméno uživatele.</param>
         /// <returns>Objekt UserInfo obsahující informace o uživateli.</returns>
-        public UserInfo GetCurrentUserInfo(UserInfo currentUserInfo, string WinUserName)
+        public UserInfo? GetCurrentUserInfo(string winUserName)
         {
-            currentUserInfo = db.UserInfos.FirstOrDefault(u => u.WinUsername == WinUserName);
-            return currentUserInfo;
+            if (string.IsNullOrWhiteSpace(winUserName))
+            {
+                throw new ArgumentException("Uživatelské jméno Windows uživatele nesmí být prázdné.", nameof(winUserName));
+            }
+
+            return db.UserInfos.FirstOrDefault(u => u.WinUsername == winUserName);
         }
 
         /// <summary>
@@ -133,25 +111,25 @@ namespace VykazyPrace
             zakazka = db.Zakazkies.FirstOrDefault(b => b.Id.ToString() == id);
             return zakazka;
         }
-        public List<Log> GetLogs()
-        {
-            List<Log> logs = new List<Log>();
+        //public List<Log> GetLogs()
+        //{
+        //    List<Log> logs = new List<Log>();
 
 
-            logs = db.Logs.ToList();
+        //    logs = db.Logs.ToList();
 
 
 
 
 
-            return logs;
-        }
+        //    return logs;
+        //}
 
-        public void SaveLog(Log log)
-        {
-            db.Logs.Add(log);
-            db.SaveChanges();
-        }
+        //public void SaveLog(Log log)
+        //{
+        //    db.Logs.Add(log);
+        //    db.SaveChanges();
+        //}
         public UserInfo GetUserInfoByOsCis(int oscis)
         {
             UserInfo ui = new();
@@ -462,27 +440,6 @@ namespace VykazyPrace
 
             return filteredRecords;
         }
-
-
-        //public List<UzReport> GetRecordsByProject(string OsCis)
-        //{
-        //    List<UzReport> AllProjects = new();
-
-        //    List<Record> AllRecords = new();
-        //    AllRecords = GetAllRecords();
-
-        //    foreach (Record r in AllRecords)
-        //    {
-
-        //        if (r.OsCis.ToString() == OsCis)
-        //        {
-
-        //        }
-        //    }
-
-
-
-        //}
 
         public List<Models.UzReport> DatasourceUzReport(string date, UserInfo user)
         {
