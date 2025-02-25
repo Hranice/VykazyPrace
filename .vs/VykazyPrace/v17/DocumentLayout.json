@@ -1,0 +1,181 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jprochazka\\source\\repos\\VykazyPrace\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5B24D6D4-75FF-4AC6-8B55-72AD22DF434F}|VykazyPrace.csproj|c:\\users\\jprochazka\\source\\repos\\vykazyprace\\dbinteractor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B24D6D4-75FF-4AC6-8B55-72AD22DF434F}|VykazyPrace.csproj|solutionrelative:dbinteractor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B24D6D4-75FF-4AC6-8B55-72AD22DF434F}|VykazyPrace.csproj|c:\\users\\jprochazka\\source\\repos\\vykazyprace\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B24D6D4-75FF-4AC6-8B55-72AD22DF434F}|VykazyPrace.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B24D6D4-75FF-4AC6-8B55-72AD22DF434F}|VykazyPrace.csproj|c:\\users\\jprochazka\\source\\repos\\vykazyprace\\projectmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B24D6D4-75FF-4AC6-8B55-72AD22DF434F}|VykazyPrace.csproj|solutionrelative:projectmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B24D6D4-75FF-4AC6-8B55-72AD22DF434F}|VykazyPrace.csproj|C:\\Users\\jprochazka\\source\\repos\\VykazyPrace\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5B24D6D4-75FF-4AC6-8B55-72AD22DF434F}|VykazyPrace.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B24D6D4-75FF-4AC6-8B55-72AD22DF434F}|VykazyPrace.csproj|C:\\Users\\jprochazka\\source\\repos\\VykazyPrace\\ucdaysothers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5B24D6D4-75FF-4AC6-8B55-72AD22DF434F}|VykazyPrace.csproj|solutionrelative:ucdaysothers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B24D6D4-75FF-4AC6-8B55-72AD22DF434F}|VykazyPrace.csproj|c:\\users\\jprochazka\\source\\repos\\vykazyprace\\ucdaysothers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B24D6D4-75FF-4AC6-8B55-72AD22DF434F}|VykazyPrace.csproj|solutionrelative:ucdaysothers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B24D6D4-75FF-4AC6-8B55-72AD22DF434F}|VykazyPrace.csproj|C:\\Users\\jprochazka\\source\\repos\\VykazyPrace\\showrecords.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5B24D6D4-75FF-4AC6-8B55-72AD22DF434F}|VykazyPrace.csproj|solutionrelative:showrecords.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B24D6D4-75FF-4AC6-8B55-72AD22DF434F}|VykazyPrace.csproj|C:\\Users\\jprochazka\\source\\repos\\VykazyPrace\\projectmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5B24D6D4-75FF-4AC6-8B55-72AD22DF434F}|VykazyPrace.csproj|solutionrelative:projectmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B24D6D4-75FF-4AC6-8B55-72AD22DF434F}|VykazyPrace.csproj|c:\\users\\jprochazka\\source\\repos\\vykazyprace\\models\\vykazycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B24D6D4-75FF-4AC6-8B55-72AD22DF434F}|VykazyPrace.csproj|solutionrelative:models\\vykazycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B24D6D4-75FF-4AC6-8B55-72AD22DF434F}|VykazyPrace.csproj|c:\\users\\jprochazka\\source\\repos\\vykazyprace\\showrecords.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B24D6D4-75FF-4AC6-8B55-72AD22DF434F}|VykazyPrace.csproj|solutionrelative:showrecords.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DBInteractor.cs",
+              "DocumentMoniker": "C:\\Users\\jprochazka\\source\\repos\\VykazyPrace\\DBInteractor.cs",
+              "RelativeDocumentMoniker": "DBInteractor.cs",
+              "ToolTip": "C:\\Users\\jprochazka\\source\\repos\\VykazyPrace\\DBInteractor.cs",
+              "RelativeToolTip": "DBInteractor.cs",
+              "ViewState": "AQIAAFwBAAAAAAAAAAAIwG4BAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T10:04:03.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "VykazyContext.cs",
+              "DocumentMoniker": "C:\\Users\\jprochazka\\source\\repos\\VykazyPrace\\Models\\VykazyContext.cs",
+              "RelativeDocumentMoniker": "Models\\VykazyContext.cs",
+              "ToolTip": "C:\\Users\\jprochazka\\source\\repos\\VykazyPrace\\Models\\VykazyContext.cs",
+              "RelativeToolTip": "Models\\VykazyContext.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAA5wCMAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T08:44:50.152Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ShowRecords.cs",
+              "DocumentMoniker": "C:\\Users\\jprochazka\\source\\repos\\VykazyPrace\\ShowRecords.cs",
+              "RelativeDocumentMoniker": "ShowRecords.cs",
+              "ToolTip": "C:\\Users\\jprochazka\\source\\repos\\VykazyPrace\\ShowRecords.cs",
+              "RelativeToolTip": "ShowRecords.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAowB8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T08:13:07.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ShowRecords.cs [N\u00E1vrh]",
+              "DocumentMoniker": "C:\\Users\\jprochazka\\source\\repos\\VykazyPrace\\ShowRecords.cs",
+              "RelativeDocumentMoniker": "ShowRecords.cs",
+              "ToolTip": "C:\\Users\\mdrapak\\Coding\\HG\\VykazyPraceNoError2\\VykazyPrace\\ShowRecords.cs [N\u00E1vrh]",
+              "RelativeToolTip": "..\\..\\..\\..\\mdrapak\\Coding\\HG\\VykazyPraceNoError2\\VykazyPrace\\ShowRecords.cs [N\u00E1vrh]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T08:19:45.588Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProjectManagement.cs",
+              "DocumentMoniker": "C:\\Users\\jprochazka\\source\\repos\\VykazyPrace\\ProjectManagement.cs",
+              "RelativeDocumentMoniker": "ProjectManagement.cs",
+              "ToolTip": "C:\\Users\\jprochazka\\source\\repos\\VykazyPrace\\ProjectManagement.cs",
+              "RelativeToolTip": "ProjectManagement.cs",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAuwFkAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T08:18:30.776Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProjectManagement.cs [N\u00E1vrh]",
+              "DocumentMoniker": "C:\\Users\\jprochazka\\source\\repos\\VykazyPrace\\ProjectManagement.cs",
+              "RelativeDocumentMoniker": "ProjectManagement.cs",
+              "ToolTip": "C:\\Users\\mdrapak\\Coding\\HG\\VykazyPraceNoError2\\VykazyPrace\\ProjectManagement.cs [N\u00E1vrh]",
+              "RelativeToolTip": "..\\..\\..\\..\\mdrapak\\Coding\\HG\\VykazyPraceNoError2\\VykazyPrace\\ProjectManagement.cs [N\u00E1vrh]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T08:18:26.636Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UcDaysOthers.cs",
+              "DocumentMoniker": "C:\\Users\\jprochazka\\source\\repos\\VykazyPrace\\UcDaysOthers.cs",
+              "RelativeDocumentMoniker": "UcDaysOthers.cs",
+              "ToolTip": "C:\\Users\\jprochazka\\source\\repos\\VykazyPrace\\UcDaysOthers.cs",
+              "RelativeToolTip": "UcDaysOthers.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAB0AAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T08:12:34.153Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UcDaysOthers.cs [N\u00E1vrh]",
+              "DocumentMoniker": "C:\\Users\\jprochazka\\source\\repos\\VykazyPrace\\UcDaysOthers.cs",
+              "RelativeDocumentMoniker": "UcDaysOthers.cs",
+              "ToolTip": "C:\\Users\\mdrapak\\Coding\\HG\\VykazyPraceNoError2\\VykazyPrace\\UcDaysOthers.cs [N\u00E1vrh]",
+              "RelativeToolTip": "..\\..\\..\\..\\mdrapak\\Coding\\HG\\VykazyPraceNoError2\\VykazyPrace\\UcDaysOthers.cs [N\u00E1vrh]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T08:12:28.29Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\jprochazka\\source\\repos\\VykazyPrace\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\jprochazka\\source\\repos\\VykazyPrace\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T07:57:30.538Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.cs [N\u00E1vrh]",
+              "DocumentMoniker": "C:\\Users\\jprochazka\\source\\repos\\VykazyPrace\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\mdrapak\\Coding\\HG\\VykazyPraceNoError2\\VykazyPrace\\Form1.cs [N\u00E1vrh]",
+              "RelativeToolTip": "..\\..\\..\\..\\mdrapak\\Coding\\HG\\VykazyPraceNoError2\\VykazyPrace\\Form1.cs [N\u00E1vrh]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T07:57:25.106Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
