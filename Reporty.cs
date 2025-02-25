@@ -162,7 +162,7 @@ namespace VykazyPrace
 
                 // Display the result in a message box
                 string monthName = czechCulture.DateTimeFormat.GetMonthName(month);
-                MessageBox.Show($"Zaměstnanec {user.Jmeno} {user.Prijmeni} evidoval za měsíc {monthName} {hoursOther} hodin na projektech, {hoursProvoz} hodin v provozu a {hoursVacation} hodin dovolené.");
+                MessageBox.Show($"Zaměstnanec {user.FirstName} {user.Surname} evidoval za měsíc {monthName} {hoursOther} hodin na projektech, {hoursProvoz} hodin v provozu a {hoursVacation} hodin dovolené.");
             }
             catch (FormatException ex)
             {
@@ -201,7 +201,7 @@ namespace VykazyPrace
                     return;
                 }
                 string userCode = comboBoxZamestnanecSmall.Text.Split(" - ")[1];
-                string OsCisUser = Form1.dbint.GetUserInfoByOsCis(int.Parse(userCode)).OsCis.ToString();
+                string OsCisUser = Form1.dbint.GetUserInfoByOsCis(int.Parse(userCode)).PersonalNumber.ToString();
 
                 // Retrieve records filtered by project and user
                 filteredRecords = Form1.dbint.GetRecordsByProjectAndUser(idProject, OsCisUser);
@@ -224,7 +224,7 @@ namespace VykazyPrace
                
 
                 // Extract user and project details for the message
-                string userName = $"{Form1.dbint.GetUserInfoByOsCis(filteredRecords[0].OsCis).Jmeno} {Form1.dbint.GetUserInfoByOsCis(filteredRecords[0].OsCis).Prijmeni}";
+                string userName = $"{Form1.dbint.GetUserInfoByOsCis(filteredRecords[0].OsCis).FirstName} {Form1.dbint.GetUserInfoByOsCis(filteredRecords[0].OsCis).Surname}";
                 string projectName = Form1.dbint.GetProjectByProjectID(filteredRecords[0].ProjectId).NazevProjektu;
 
                 // Assuming 'Date' is a string in the format "dd/MM/yyyy", validate and extract the month

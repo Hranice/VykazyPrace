@@ -16,7 +16,6 @@ namespace VykazyPrace
     /// </summary>
     public class DBInteractor
     {
-        public User CurrentUser { get; set; } = new();
         public UserInfo CurrentUserInfo { get; set; } = new();
         public VykazyContext db { get; set; } = new();
 
@@ -33,19 +32,7 @@ namespace VykazyPrace
                 throw new ArgumentException("Uživatelské jméno Windows uživatele nesmí být prázdné.", nameof(winUserName));
             }
 
-            return db.UserInfos.FirstOrDefault(u => u.WinUsername == winUserName);
-        }
-
-        /// <summary>
-        /// Získá aktuálního uživatele na základě jeho osobního čísla (OsCis).
-        /// </summary>
-        /// <param name="currentUser">Objekt uživatele.</param>
-        /// <param name="OsCis">Osobní číslo uživatele.</param>
-        /// <returns>Objekt User obsahující informace o uživateli.</returns>
-        public User GetCurrentUser(User currentUser, int OsCis)
-        {
-            currentUser = db.Users.FirstOrDefault(u => u.OsCis == OsCis);
-            return currentUser;
+            return db.UserInfos.FirstOrDefault(u => u.WindowsUsername == winUserName);
         }
 
         public List<UserInfo> GetAllUsersAuto()
@@ -133,7 +120,7 @@ namespace VykazyPrace
         public UserInfo GetUserInfoByOsCis(int oscis)
         {
             UserInfo ui = new();
-            ui = db.UserInfos.FirstOrDefault(b => b.OsCis == oscis);
+            ui = db.UserInfos.FirstOrDefault(b => b.PersonalNumber == oscis);
             return ui;
         }
         /// <summary>
@@ -227,46 +214,7 @@ namespace VykazyPrace
             return projekt;
         }
 
-
-        public List<Record> GetRecordsByUser(User user)
-        {
-            List<Record> records = new();
-
-
-            var query = from rec in db.Records
-                        where rec.OsCis == user.OsCis
-                        select rec;
-
-            records = query.ToList();
-            return records;
-        }
-
-        public User GetUserByOsCis(string oscis)
-        {
-            User user = new User();
-
-            user = db.Users.FirstOrDefault(b => b.OsCis.ToString() == oscis);
-
-
-            return user;
-        }
-
-        public void RemoveUserAndRecords(User user, List<Record> records)
-        {
-            db.Records.RemoveRange(records);
-            db.UserInfos.Remove(GetUserInfoByOsCis(user.OsCis));
-            db.Users.Remove(user);
-            db.SaveChanges();
-
-
-        }
-
-        public void CreateUser(User user, UserInfo userInfo)
-        {
-            db.UserInfos.Add(userInfo);
-            db.Users.Add(user);
-            db.SaveChanges();
-        }
+        // TODO: implement CRUD UserInfo
 
 
         public List<Record> GetRecordsByProject(Projekty projekt)
@@ -301,7 +249,7 @@ namespace VykazyPrace
             using (var db = new VykazyContext())
             {
                 var query = from recs in db.Records.AsNoTracking()
-                            where recs.Date == date && recs.OsCis == user.OsCis
+                            where recs.Date == date && recs.OsCis == user.PersonalNumber
                             select recs;
 
                 records = query.ToList();
@@ -319,7 +267,7 @@ namespace VykazyPrace
             using (var db = new VykazyContext())
             {
                 var query = from recs in db.Records.AsNoTracking()
-                            where recs.Date == date && recs.OsCis == Form1.dbint.CurrentUserInfo.OsCis
+                            where recs.Date == date && recs.OsCis == Form1.dbint.CurrentUserInfo.PersonalNumber
                             select recs;
 
                 records = query.ToList();
@@ -335,7 +283,7 @@ namespace VykazyPrace
             string Jmeno = userName.Split(' ')[0];
             string Prijmení = userName.Split(" ")[1];
             var query = from user in db.UserInfos.AsNoTracking()
-                        where user.Jmeno == Jmeno && user.Prijmeni == Prijmení
+                        where user.FirstName == Jmeno && user.Surname == Prijmení
                         select user;
             userInfo = query.FirstOrDefault();
             return userInfo;
@@ -354,15 +302,6 @@ namespace VykazyPrace
             return records;
         }
 
-        public List<User> GetAllUsers()
-        {
-            List<User> allUsers = new();
-            var query = from user in db.Users.AsNoTracking()
-                        select user;
-
-            allUsers = query.ToList();
-            return allUsers;
-        }
 
         public List<Record> GetRecordsAllByDate(string date)
         {
@@ -393,7 +332,7 @@ namespace VykazyPrace
             List<Record> records = new();
             List<Record> filteredRecords = new();
             var query = from db in db.Records
-                        where db.OsCis == user.OsCis
+                        where db.OsCis == user.PersonalNumber
                         select db;
             records = query.ToList();
             foreach (Record record in records)

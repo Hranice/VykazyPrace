@@ -40,18 +40,20 @@ namespace VykazyPrace
 
         private void button2_Click(object sender, EventArgs e)
         {
-            User user = new User();
-            List<Record> records = new List<Record>();
+            MessageBox.Show("Tu by bylo načtení a asi smazání uživatele?");
+
+            //User user = new User();
+            //List<Record> records = new List<Record>();
 
 
-            user = Form1.dbint.GetUserByOsCis(dataGridView1.SelectedRows[0].Cells[3].Value.ToString());
+            //user = Form1.dbint.GetUserByOsCis(dataGridView1.SelectedRows[0].Cells[3].Value.ToString());
 
-            records = Form1.dbint.GetRecordsByUser(user);
+            //records = Form1.dbint.GetRecordsByUser(user);
 
-            Form1.dbint.RemoveUserAndRecords(user, records);
+            //Form1.dbint.RemoveUserAndRecords(user, records);
 
-            FillDgv();
-            EditDgv();
+            //FillDgv();
+            //EditDgv();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -91,30 +93,23 @@ namespace VykazyPrace
                     return;
                 }
 
-                // Proceed with user creation if all validations pass
-                User user = new User()
-                {
-                    OsCis = osCis,
-                    Loa = 1
-                };
-
                 string WinUsername = RemoveDiacritics(
                     string.Concat(textBoxJmeno.Text.Substring(0, 1), textBoxPrijmeni.Text)
                 ).ToLower();
 
                 UserInfo userInfo = new UserInfo()
                 {
-                    Jmeno = textBoxJmeno.Text,
-                    OsCis = osCis,
-                    Prijmeni = textBoxPrijmeni.Text,
-                    WinUsername = WinUsername
+                    FirstName= textBoxJmeno.Text,
+                    Surname= textBoxPrijmeni.Text,
+                    WindowsUsername = WinUsername,
+                    PersonalNumber= osCis
                 };
 
                 // Attempt to create the user in the database
                 try
                 {
-                    Form1.dbint.CreateUser(user, userInfo);
-                    MessageBox.Show("Uživatel byl úspěšně vytvořen.", "Úspěch", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //Form1.dbint.CreateUser(userInfo);
+                    MessageBox.Show("Uživatel NEBYL CUZ JSEM SMAZAL CRUD byl úspěšně vytvořen.", "Úspěch", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     // Refresh the DataGridView
                     FillDgv();

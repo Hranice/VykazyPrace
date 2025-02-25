@@ -150,22 +150,20 @@ namespace VykazyPrace
         {
             AppLogger.Error("An error has occurred when trying to load user from database.", new Exception("test"));
 
-            User? currentUser = new();
             UserInfo? currentUserInfo = new();
 
             try
             {
                 currentUserInfo = dbint.GetCurrentUserInfo(Environment.UserName);
-                currentUser = dbint.GetCurrentUser(currentUser, currentUserInfo.OsCis);
             }
             catch (Exception ex)
             {
                 AppLogger.Error("An error has occurred when trying to load user from database.", ex);
             }
 
-            if (ValidateUser(currentUser, currentUserInfo))
+            if (ValidateUser(currentUserInfo))
             {
-                MessageBox.Show($"Úspìšnì pøihlášen jako {currentUserInfo.Jmeno} {currentUserInfo.Prijmeni}.");
+                MessageBox.Show($"Úspìšnì pøihlášen jako {currentUserInfo.FirstName} {currentUserInfo.Surname}.");
             }
             else
             {
@@ -174,12 +172,12 @@ namespace VykazyPrace
         }
 
         /// <summary>
-        /// Validates the current user and user info.
+        /// Validates the current user info.
         /// </summary>
         /// <returns>True if valid; otherwise, false.</returns>
-        bool ValidateUser(User currentUser, UserInfo currentUserInfo)
+        bool ValidateUser(UserInfo currentUserInfo)
         {
-            if (currentUserInfo == null || currentUser == null)
+            if (currentUserInfo == null)
             {
                 MessageBox.Show("Nejste registrován jako uživatel, aplikace bude ukonèena.");
                 this.Close();
@@ -188,7 +186,6 @@ namespace VykazyPrace
             else
             {
                 dbint.CurrentUserInfo = currentUserInfo;
-                dbint.CurrentUser = currentUser;
                 return true;
             }
         }
@@ -198,14 +195,14 @@ namespace VykazyPrace
         /// </summary>
         void LoadUserInfoPanel()
         {
-            labelUsername.Text = dbint.CurrentUserInfo.WinUsername;
-            labelName.Text = $"{dbint.CurrentUserInfo.Jmeno}  {dbint.CurrentUserInfo.Prijmeni}";
-            labelOsCis.Text = dbint.CurrentUserInfo.OsCis.ToString();
+            labelUsername.Text = dbint.CurrentUserInfo.WindowsUsername;
+            labelName.Text = $"{dbint.CurrentUserInfo.FirstName}  {dbint.CurrentUserInfo.Surname}";
+            labelOsCis.Text = dbint.CurrentUserInfo.PersonalNumber.ToString();
 
-            comboBoxChangeUser.Text = Form1.dbint.CurrentUserInfo.Jmeno + " " + Form1.dbint.CurrentUserInfo.Prijmeni;
+            comboBoxChangeUser.Text = Form1.dbint.CurrentUserInfo.FirstName + " " + Form1.dbint.CurrentUserInfo.Surname;
             
 
-            if (Form1.dbint.CurrentUser.Loa > 1)
+            if (Form1.dbint.CurrentUserInfo.LevelOfAccess > 1)
             {
                 comboBoxChangeUser.Enabled = true;
                 comboBoxChangeUser.Visible = true;
@@ -225,7 +222,7 @@ namespace VykazyPrace
         /// </summary>
         void SetButtonsByPermission()
         {
-            bool hasPermission = dbint.CurrentUser.Loa > 1;
+            bool hasPermission = dbint.CurrentUserInfo.LevelOfAccess > 1;
             buttonProjects.Enabled = hasPermission;
             buttonUsers.Enabled = hasPermission;
             buttonReporty.Enabled = hasPermission;
@@ -393,7 +390,7 @@ namespace VykazyPrace
         private void button1_Click_1(object sender, EventArgs e)
         {
 
-            VykazyPrace.UzReport uz = new(dbint.CurrentUserInfo.OsCis.ToString(), $"1/{_month}/{_year}");
+            VykazyPrace.UzReport uz = new(dbint.CurrentUserInfo.PersonalNumber.ToString(), $"1/{_month}/{_year}");
             uz.ShowDialog();
         }
     }

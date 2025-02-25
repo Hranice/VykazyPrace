@@ -322,7 +322,7 @@ namespace VykazyPrace
             {
                 Id = zakazka.Id,
                 Nazev = zakazka.Nazev,
-                CisloZakazky = zakazka.CisloZakazky,
+                CisloZakazky = (int)zakazka.CisloZakazky,
                 Poznamky = zakazka.Poznamky,
                 TypZakazky = zakazka.TypZakazky,
                 Autor = zakazka.Autor
@@ -353,7 +353,7 @@ namespace VykazyPrace
                 Id = projekt.Id,
                 Nazev = projekt.Nazev,
                 Autor = projekt.Autor,
-                CisloZakazky = projekt.CisloZakazky,
+                CisloZakazky = (int)projekt.CisloZakazky,
                 Poznamky = projekt.Poznamky,
                 TypZakazky = projekt.TypZakazky
             };
@@ -383,7 +383,7 @@ namespace VykazyPrace
             List<UserInfo> allusers = Form1.dbint.GetAllUsersAuto();
             foreach(UserInfo user in allusers)
             {
-                comboBox2.Items.Add($"{user.Jmeno} {user.Prijmeni}");
+                comboBox2.Items.Add($"{user.FirstName} {user.Surname}");
             }
         }
         private void button9_Click(object sender, EventArgs e)

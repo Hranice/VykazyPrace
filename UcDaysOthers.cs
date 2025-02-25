@@ -47,7 +47,7 @@ namespace VykazyPrace
 
             UserInfo userTOFind = new();
             userTOFind = Form1.dbint.GetUserInfoByOsCis(int.Parse(OsCis));
-            OsCis = userTOFind.OsCis.ToString();
+            OsCis = userTOFind.PersonalNumber.ToString();
             List<Record> records = new();
             try
             {
@@ -96,7 +96,7 @@ namespace VykazyPrace
 
             }
             Oscis = OsCis;
-            ShowHoursDay(userTOFind.OsCis.ToString());
+            ShowHoursDay(userTOFind.PersonalNumber.ToString());
         }
 
         private void buttonAddTime_Click(object sender, EventArgs e)

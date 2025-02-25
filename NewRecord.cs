@@ -125,12 +125,12 @@ namespace VykazyPrace
             zaznam.ProjectId = selectedProject.Id.ToString();
 
             // Assign OsCis from the current user
-            if (string.IsNullOrEmpty(Form1.dbint.CurrentUserInfo?.OsCis.ToString()))
+            if (string.IsNullOrEmpty(Form1.dbint.CurrentUserInfo?.PersonalNumber.ToString()))
             {
                 MessageBox.Show("User identifier (OsCis) is missing or invalid.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            zaznam.OsCis = Form1.dbint.CurrentUserInfo.OsCis;
+            zaznam.OsCis = Form1.dbint.CurrentUserInfo.PersonalNumber;
 
 
             if (checkBox2.Checked)
@@ -138,7 +138,7 @@ namespace VykazyPrace
                 recordVac.Activity = "Dovolená";
                 recordVac.Date = Date;
                 recordVac.Hours = "7,5";
-                recordVac.OsCis = Form1.dbint.CurrentUserInfo.OsCis;
+                recordVac.OsCis = Form1.dbint.CurrentUserInfo.PersonalNumber;
                 recordVac.ProjectId = Form1.dbint.GetProjektByName("Dovolená").Id.ToString();
 
                 Form1.dbint.SaveRecord(recordVac);
@@ -260,12 +260,12 @@ namespace VykazyPrace
             zaznam.ProjectId = selectedProject.Id.ToString();
 
             // Assign OsCis from the current user
-            if (string.IsNullOrEmpty(Form1.dbint.CurrentUserInfo?.OsCis.ToString()))
+            if (string.IsNullOrEmpty(Form1.dbint.CurrentUserInfo?.PersonalNumber.ToString()))
             {
                 MessageBox.Show("User identifier (OsCis) is missing or invalid.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            zaznam.OsCis = Form1.dbint.CurrentUserInfo.OsCis;
+            zaznam.OsCis = Form1.dbint.CurrentUserInfo.PersonalNumber;
             
 
             if (checkBox1.Checked)
@@ -273,7 +273,7 @@ namespace VykazyPrace
                 recordVac.Activity = "Dovolená";
                 recordVac.Date = Date;
                 recordVac.Hours = "7,5";
-                recordVac.OsCis = Form1.dbint.CurrentUserInfo.OsCis;
+                recordVac.OsCis = Form1.dbint.CurrentUserInfo.PersonalNumber;
                 recordVac.ProjectId = Form1.dbint.GetProjektByName("Dovolená").Id.ToString();
 
                 Form1.dbint.SaveRecord(recordVac);

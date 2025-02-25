@@ -54,14 +54,14 @@ namespace VykazyPrace
         /// </summary>
         void UpdateControlsByPriviligies()
         {
-            if (Form1.dbint.CurrentUser.Loa == 1)
+            if (Form1.dbint.CurrentUserInfo.LevelOfAccess == 1)
             {
                 radioButtonAllRecords.Enabled = false;
                 radioButtonConcreteWorker.Enabled = false;
                 radioButtonProjects.Enabled = false;
                 comboBoxProjects.Enabled = false;
             }
-            else if (Form1.dbint.CurrentUser.Loa > 1)
+            else if (Form1.dbint.CurrentUserInfo.LevelOfAccess > 1)
             {
                 radioButtonConcreteWorker.Enabled = true;
                 radioButtonAllRecords.Enabled = true;
@@ -209,19 +209,6 @@ namespace VykazyPrace
         }
 
         /// <summary>
-        /// Fills the combobox with users from the database.
-        /// </summary>
-        private void FillComboboxWithUsers()
-        {
-            List<User> allUsers = Form1.dbint.GetAllUsers();
-
-            foreach (User user in allUsers)
-            {
-                comboBoxUsers.Items.Add(user);
-            }
-        }
-
-        /// <summary>
         /// Fills the combobox with projects from the database.
         /// </summary>
         private void FillComboboxWithProjects()
@@ -244,7 +231,6 @@ namespace VykazyPrace
             {
                 comboBoxUsers.Enabled = true;
                 comboBoxUsers.Items.Clear();
-                FillComboboxWithUsers();
             }
             else
             {
@@ -284,7 +270,6 @@ namespace VykazyPrace
         /// </summary>
         private void comboBoxUsers_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FillDgvConcreteUser(Form1.dbint.GetUserInfoByOsCis((comboBoxUsers.SelectedItem as User).OsCis).OsCis);
         }
 
         /// <summary>
