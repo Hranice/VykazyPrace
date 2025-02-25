@@ -23,8 +23,6 @@ public partial class VykazyContext : DbContext
 
     public virtual DbSet<Record> Records { get; set; }
 
-    public virtual DbSet<User> Users { get; set; }
-
     public virtual DbSet<UserInfo> UserInfos { get; set; }
 
     public virtual DbSet<Zakazky> Zakazkies { get; set; }
@@ -33,7 +31,7 @@ public partial class VykazyContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlite($"Data Source={Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\..\\Database\\Vykazy.db"))}");
+        => optionsBuilder.UseSqlite("Data Source=.\\Database\\Vykazy.db");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -69,15 +67,6 @@ public partial class VykazyContext : DbContext
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Date).HasColumnName("date");
             entity.Property(e => e.ProjectId).HasColumnName("ProjectID");
-        });
-
-        modelBuilder.Entity<User>(entity =>
-        {
-            entity.HasKey(e => e.OsCis);
-
-            entity.HasIndex(e => e.OsCis, "IX_Users_OsCis").IsUnique();
-
-            entity.Property(e => e.Loa).HasColumnName("LOA");
         });
 
         modelBuilder.Entity<UserInfo>(entity =>

@@ -7,15 +7,13 @@ public partial class UserInfo
 {
     public int Id { get; set; }
 
-    public string Jmeno { get; set; } = null!;
+    public string FirstName { get; set; } = null!;
 
-    public string Prijmeni { get; set; } = null!;
+    public string Surname { get; set; } = null!;
 
-    public int OsCis { get; set; }
+    public int PersonalNumber { get; set; }
 
-    public string WinUsername { get; set; } = null!;
-    public override string ToString()
-    {
-        return $"{Jmeno} {Prijmeni} - {OsCis}";
-    }
+    public string WindowsUsername { get; set; } = null!;
+
+    public int? LevelOfAccess { get; set; }
 }

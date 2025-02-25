@@ -10,4 +10,6 @@ public partial class ProjectArchive
     public string Oznaceni { get; set; } = null!;
 
     public string Nazev { get; set; } = null!;
+
+    public int OgId { get; set; }
 }

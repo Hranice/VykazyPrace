@@ -10,8 +10,4 @@ public partial class Projekty
     public string OznaceniProjektu { get; set; } = null!;
 
     public string NazevProjektu { get; set; } = null!;
-    public override string ToString()
-    {
-        return $"{NazevProjektu}";
-    }
 }

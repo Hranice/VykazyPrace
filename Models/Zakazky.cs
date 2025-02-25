@@ -7,7 +7,7 @@ public partial class Zakazky
 {
     public int Id { get; set; }
 
-    public int CisloZakazky { get; set; }
+    public int? CisloZakazky { get; set; }
 
     public string? TypZakazky { get; set; }
 
